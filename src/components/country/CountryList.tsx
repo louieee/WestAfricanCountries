@@ -23,10 +23,10 @@ const CountryList: FC<ICountryListModal> = ({countries, handleClose, handleOpen,
     }
 
     return (
-        <div className="bg-white p-4 ">
+        <div className="p-4 ">
             <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {countries?.map((country) => (
-                    <li key={country.name.official} className="p-2 border rounded-md hover:bg-gray-100">
+                    <li key={country.name.official} className="p-2 border rounded-md hover:bg-gradient-to-r from-orange-200 to-white">
                         <CountryListItem country={country} handleOpen={handleOpenFunc}/>
                         <CountryDetailView key={country.name.official} country={country} onClose={handleCloseFunc}
                                            isOpen={isOpen && selectedCountry === country}

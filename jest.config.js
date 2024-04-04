@@ -15,7 +15,7 @@ module.exports = {
     '^.+\\.(ts|tsx)$': 'ts-jest',
   },
   // Watch for file changes and rerun tests
-  watchPlugins: [
-    ['jest-watch-typeahead', { enabled: true }], // Optional for autocompletion
-  ],
+  // watchPlugins: [
+  //   ['jest-watch-typeahead', { enabled: true }], // Optional for autocompletion
+  // ],
 };

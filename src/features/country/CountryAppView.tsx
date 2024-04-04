@@ -30,10 +30,10 @@ const CountryAppView: React.FC = () => {
 
   return (
       countries?
-          <>
+          <main className={"bg-light h-screen"}>
               <Navbar search={search} setSearch={setSearch} />
               <CountryListView countries={countries ?? []} />
-          </>
+          </main>
           :
       <div/>
   );

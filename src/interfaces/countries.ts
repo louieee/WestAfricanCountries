@@ -1,20 +1,6 @@
 import {IModalProps} from "./utils";
 import CountryDetailView from "../features/country/CountryDetailView";
 
-export interface CountryList {
-  name: {
-    common: string; // Common name of the country
-    official: string; // Official name of the country
-    nativeName?: { // Optional: Native name in various languages (if available)
-      eng: {
-        official: string;
-        common: string;
-      };
-    };
-  };
-   flag: string; // Unicode flag character representation (🇸🇱)
-}
-
 export interface ICurrency {
   name: string; // Name of the currency (West African CFA franc)
   symbol: string; // Currency symbol (Fr)

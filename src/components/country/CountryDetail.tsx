@@ -8,8 +8,8 @@ const CountryDetail: FC<ICountryDetailModalProps> = ({country,
                                                        , isOpen, onClose}) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-50">
-        <div className={"flex flex-col bg-white p-8 rounded-md shadow-md"}>
+      <div className="fixed inset-0 bg-teal-100 bg-opacity-75 flex justify-center items-center z-50">
+        <div className={"flex flex-col bg-gradient-to-l from-light to-primary p-8 rounded-md shadow-md w-[600px]"}>
           <h2 className="text-2xl font-medium text-center mb-3">{country.name.official}</h2>
           <div className={"flex justify-between"}>
             <div className={"mr-4"}>
