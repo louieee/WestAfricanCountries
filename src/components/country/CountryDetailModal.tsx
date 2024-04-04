@@ -3,9 +3,12 @@ import {ICountryDetailModalProps} from "../../interfaces/countries";
 import Modal from "../reusables/Modal";
 
 
-const CountryDetail: FC<ICountryDetailModalProps> = ({country,
-                                                       currency
-                                                       , isOpen, onClose}) => {
+const CountryDetailModal: FC<ICountryDetailModalProps> = ({country,
+                                                        isOpen, onClose}) => {
+
+  if (!country) return null; // Handle no country data
+
+  const currency = country.currencies[Object.keys(country.currencies)[0]];
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="fixed inset-0 bg-teal-100 bg-opacity-75 flex justify-center items-center z-50">
@@ -33,4 +36,4 @@ const CountryDetail: FC<ICountryDetailModalProps> = ({country,
   );
 };
 
-export default CountryDetail
+export default CountryDetailModal

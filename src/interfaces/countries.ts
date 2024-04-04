@@ -1,5 +1,4 @@
 import {IModalProps} from "./utils";
-import CountryDetailView from "../features/country/CountryDetailView";
 
 export interface ICurrency {
   name: string; // Name of the currency (West African CFA franc)
@@ -30,13 +29,10 @@ export interface ICountryDetail {
   flag: string; // Unicode flag character representation (🇸🇱)
 }
 
-export interface ICountryDetailProps{
+export interface ICountryDetailModalProps extends IModalProps{
   country: ICountryDetail; // Required string prop
   currency?: ICurrency; // Optional onClick function prop
   className?: string; // Optional className prop
-}
-
-export interface ICountryDetailModalProps extends ICountryDetailProps, IModalProps{
 }
 
 export interface ICountryListItemProp {

@@ -6,11 +6,14 @@ interface NavProp {
     setSearch: (val:string)=>void
 }
 const NavigationBar = ({search, setSearch}:NavProp) => {
+    /*
+    * This component handles the nav bar
+    * */
 
   return (
     <nav className={`sticky top-0 z-50 bg-teal-700 flex justify-between items-center h-16 px-4`}>
       <div className="md-text-md lg:text-lg text-white font-bold">West African Countries</div>
-      <div className="flex items-center">  {/* Add sm:flex-grow for responsiveness */}
+      <div className="flex items-center">
         <input
           type="text"
           placeholder="Search..."

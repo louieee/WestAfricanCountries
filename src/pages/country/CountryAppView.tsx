@@ -1,20 +1,22 @@
-import {useWestAfricanCountries} from "../../hooks/countries";
+import {useWestAfricanCountries} from "../../hooks/country";
 import CountryListView from "./CountryListView";
 import Navbar from "../../components/app/Navbar";
-import {useEffect, useState} from "react";
+import {FC, useEffect, useState} from "react";
 import {ICountryDetail} from "../../interfaces/countries";
+import LoadingScreen from "../../components/app/LoadingScreen";
 
 
-const CountryAppView: React.FC = () => {
+const CountryAppView: FC = () => {
     const [search, setSearch] = useState("");
   const { isLoading, error, data } = useWestAfricanCountries();
     const [countries, setCountries] = useState<ICountryDetail[]|undefined>();
 
   const filteredCountries =(search:string)=>{
+      // filter country by checking if country official name contains letters in the search
       return data?.filter((country)=>country.name.official.toLowerCase().includes(search.toLowerCase()))
   };
 
-  useEffect(()=>{
+  useEffect(()=>{ // if search or data changes update countries
       if (search !== ""){
       setCountries(()=>filteredCountries(search))
   }else{
@@ -23,7 +25,9 @@ const CountryAppView: React.FC = () => {
 
   }, [search, data])
 
-  if (isLoading) return <div>Loading countries...</div>;
+  if (isLoading){
+      return <LoadingScreen isOpen={isLoading}/>;
+  }
   if (error) { // @ts-ignore
     return <div>Error: {error.message}</div>;
   }
@@ -35,7 +39,7 @@ const CountryAppView: React.FC = () => {
               <CountryListView countries={countries ?? []} />
           </main>
           :
-      <div/>
+      <LoadingScreen/>
   );
 };
 

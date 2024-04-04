@@ -1,7 +1,11 @@
 import {IModalProps} from "../../interfaces/utils";
+import {FC} from "react";
 
-const Modal: React.FC<IModalProps> = ({ isOpen = false, onClose, children }) => {
-  if (!isOpen) return null; // Don't render if not open
+const Modal: FC<IModalProps> = ({ isOpen = false, onClose, children }) => {
+    /*
+    * This is a reusable modal component
+    * */
+    if (!isOpen) return null; // Don't render if not open
 
   return (
     <div className="modal" onClick={onClose}>

@@ -1,5 +1,5 @@
 import type {ICountryDetail} from "../interfaces/countries";
-import axiosInstance from "../helpers/axios";
+import axiosInstance from "../services/axios";
 
 
 export const getCountries = async ():Promise<ICountryDetail[]>=>{
