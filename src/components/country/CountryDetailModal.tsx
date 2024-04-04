@@ -18,7 +18,7 @@ const CountryDetailModal: FC<ICountryDetailModalProps> = ({country,
             <div className={"mr-4"}>
               <ul className="list-disc space-y-2 mt-4">
                 <li className={"font-bold"}>Capital: <span className={"font-normal"}>{country.capital}</span></li>
-                <li className={"font-bold"}>Currency: <span className={"font-normal"}>{currency?.name}</span></li>
+                <li className={"font-bold"}>Currency: <span className={"font-normal"}>{currency?.name} ({currency.symbol})</span></li>
                 <li className={"font-bold"}>Top-Level Domain: <span className={"font-normal"}>{country.tld}</span>
                 </li>
                 <li className={"font-bold"}>Calling Code(s): <span className={"font-normal"}>{country.idd.root}</span>
