@@ -1,12 +1,12 @@
-import {useWestAfricanCountries} from "../../hooks/country";
-import CountryListView from "./CountryListView";
-import Navbar from "../../components/app/Navbar";
+import {useWestAfricanCountries} from "../hooks/country";
+import Navbar from "../components/app/Navbar";
 import {FC, useEffect, useState} from "react";
-import {ICountryDetail} from "../../interfaces/countries";
-import LoadingScreen from "../../components/app/LoadingScreen";
+import {ICountryDetail} from "../interfaces/countries";
+import LoadingScreen from "../components/app/LoadingScreen";
+import CountryList from "../components/country/CountryList";
 
 
-const CountryAppView: FC = () => {
+const CountryPage: FC = () => {
     const [search, setSearch] = useState("");
   const { isLoading, error, data } = useWestAfricanCountries();
     const [countries, setCountries] = useState<ICountryDetail[]|undefined>();
@@ -36,11 +36,11 @@ const CountryAppView: FC = () => {
       countries?
           <main className={"bg-light h-screen"}>
               <Navbar search={search} setSearch={setSearch} />
-              <CountryListView countries={countries ?? []} />
+              <CountryList countries={countries ?? []} />
           </main>
           :
       <LoadingScreen/>
   );
 };
 
-export default CountryAppView;
+export default CountryPage;

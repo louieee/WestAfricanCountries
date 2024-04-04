@@ -1,14 +1,14 @@
 import {FC, useState} from "react";
 import {ICountryDetail} from "../../interfaces/countries";
-import CountryListItem from "../../components/country/CountryListItem";
-import CountryDetailModal from "../../components/country/CountryDetailModal";
-import LoadingScreen from "../../components/app/LoadingScreen";
+import CountryListItem from "./CountryListItem";
+import CountryDetailModal from "./CountryDetailModal";
+import LoadingScreen from "../app/LoadingScreen";
 
 interface ICountryListProp {
     countries: ICountryDetail[]
 }
 
-const CountryListView: FC<ICountryListProp> = ({countries}) => {
+const CountryList: FC<ICountryListProp> = ({countries}) => {
   const [isOpen, setIsOpen] = useState(false); // State for modal visibility
     const [selectedCountry, setSelectedCountry] = useState<ICountryDetail>();
 
@@ -46,4 +46,4 @@ const CountryListView: FC<ICountryListProp> = ({countries}) => {
   );
 };
 
-export default CountryListView;
+export default CountryList;
